@@ -38,7 +38,45 @@
       
       <guid>http://localhost:1313/post/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       
-        <description></description>
+        <description>&lt;h1 id=&#34;步骤1安装-hugo&#34;&gt;步骤1：安装 hugo&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;brew install hugo
+# or
+port install hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;确认你的安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤2-创建新网站&#34;&gt;步骤2: 创建新网站&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤3-添加主题&#34;&gt;步骤3: 添加主题&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;cd quickstart
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤4-添加内容&#34;&gt;步骤4： 添加内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;hugo new posts/&amp;lt;name&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤5-开始hugo-server&#34;&gt;步骤5: 开始hugo server&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;hugo server -D
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;新站点是http://localhost:1313/.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;步骤6自定义你的主题&#34;&gt;步骤6：自定义你的主题&lt;/h1&gt;
+&lt;p&gt;打开config.toml文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;https://example.org/&amp;quot;    #你的github个人主页
+languageCode = &amp;quot;en-us&amp;quot;              #语言
+title = &amp;quot;My New Hugo Site&amp;quot;          #标题
+theme = &amp;quot;ananke&amp;quot;                    #主题
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤7-创建静态页面&#34;&gt;步骤7： 创建静态页面&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;hugo -D
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;步骤8创建github个人页面仓库&#34;&gt;步骤8：创建Github个人页面仓库&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;创建新仓库名为 &amp;lt;你的github名&amp;gt;.github.io&lt;/li&gt;
+&lt;li&gt;在public文件中使用cmder运行：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;git init
+git add .
+git commit -v/m
+git remote xxxx
+git push xxxx
+&lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>
     
