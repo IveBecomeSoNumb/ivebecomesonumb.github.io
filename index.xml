@@ -6,7 +6,7 @@
     <description>Recent content on Jane - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 16:01:23 +0800</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,6 +28,34 @@
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>Mavren 和Java 包管理区别</title>
+      <link>http://localhost:1313/post/mavren-%E5%92%8Cjava-%E5%8C%85%E7%AE%A1%E7%90%86%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Thu, 05 Nov 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/mavren-%E5%92%8Cjava-%E5%8C%85%E7%AE%A1%E7%90%86%E5%8C%BA%E5%88%AB/</guid>
+      
+        <description>&lt;h1 id=&#34;jvm工作原理&#34;&gt;JVM工作原理&lt;/h1&gt;
+&lt;p&gt;首先，我们先来了解一下JVM的工作原理，其实简单地概括性地说，JVM只会做两件事情：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;执行一个类的字节码&lt;/li&gt;
+&lt;li&gt;在执行这个类的字节码的时候，若碰到了新的类，则加载它&lt;/li&gt;
+&lt;li&gt;不断重复以上两个过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可见，JVM的工作是如此的简单和枯燥，可是JVM是怎么知道在哪里读取这些类的呢？
+JVM是通过&lt;code&gt;classpath&lt;/code&gt;参数来获取到这个路径的。
+你没有给JVM传递classpath这个参数，但是你的编译器偷偷帮你干了这件事情了！&lt;/p&gt;
+&lt;p&gt;每次用编译器编译的时候，控制台都会有一串命令，在命令里面你可以清楚地看到编译器给JVM偷偷传递了&lt;code&gt;classpath&lt;/code&gt;参数&lt;/p&gt;
+&lt;p&gt;另外，由于一个包有可能又依赖于其他很多个包，因此一个项目下来，可能&lt;code&gt;classpath&lt;/code&gt;下的依赖路径会变得又臭又长。
+在Java刚诞生的时候，人们是需要通过手写这些&lt;code&gt;classpath&lt;/code&gt;路径来让JVM读懂读取jar包（一堆类的集合）的路径的，后面再人们的不断努力下，强大的IDEA和Maven的诞生，才让这个繁琐的过程变得无比简单&lt;/p&gt;
+&lt;h1 id=&#34;classpath-hell&#34;&gt;Classpath hell&lt;/h1&gt;
+&lt;p&gt;在Maven诞生之前，依赖冲突是一个很容易发生且很难解决的问题，我们把这种依赖冲突又称为&lt;code&gt;classpath hell&lt;/code&gt;（也叫依赖地狱）
+什么是依赖冲突，由于全限定类名是类的唯一标示，因此当多个同名类不同版本同时出现在classpath的时候，就是噩梦的开始。
+&lt;img src=&#34;D:%5Cblog%5Civebecomesonumb.github.io-creator%5Cresources_gen%5Cimages%5Ccph.png&#34; alt=&#34;classpath hell&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>
     
@@ -87,7 +115,8 @@ git push xxxx
       
       <guid>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</guid>
       
-        <description></description>
+        <description>&lt;p&gt;开博记录贴！ 11-02号开通blog&lt;/p&gt;
+</description>
       
     </item>
     
