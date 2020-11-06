@@ -68,7 +68,7 @@
 <meta itemprop="name" content="Mavren 和Java 包管理区别">
 <meta itemprop="description" content="JVM工作原理 首先，我们先来了解一下JVM的工作原理，其实简单地概括性地说，JVM只会做两件事情： 执行一个类的字节码 在执行这个类的字节码的时">
 <meta itemprop="dateModified" content="2020-11-05T16:01:23+08:00" />
-<meta itemprop="wordCount" content="550">
+<meta itemprop="wordCount" content="1741">
 
 
 
@@ -377,8 +377,41 @@ JVM是通过<code>classpath</code>参数来获取到这个路径的。
 在Java刚诞生的时候，人们是需要通过手写这些<code>classpath</code>路径来让JVM读懂读取jar包（一堆类的集合）的路径的，后面再人们的不断努力下，强大的IDEA和Maven的诞生，才让这个繁琐的过程变得无比简单</p>
 <h1 id="classpath-hell">Classpath hell</h1>
 <p>在Maven诞生之前，依赖冲突是一个很容易发生且很难解决的问题，我们把这种依赖冲突又称为<code>classpath hell</code>（也叫依赖地狱）
-什么是依赖冲突，由于全限定类名是类的唯一标示，因此当多个同名类不同版本同时出现在classpath的时候，就是噩梦的开始。
-<img src="D:%5Cblog%5Civebecomesonumb.github.io-creator%5Cresources_gen%5Cimages%5Ccph.png" alt="classpath hell"></p>
+什么是依赖冲突，由于全限定类名是类的唯一标示，因此当多个同名类不同版本同时出现在classpath的时候，就是噩梦的开始。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATcAAACiCAMAAAATIHpEAAAAe1BMVEX///8AAACIiIirq6vr6+u+vr7g4OD6+vouLi719fVMTEzk5OT5+fnU1NRkZGTy8vJdXV1paWnPz885OTm3t7eRkZFWVlaxsbE/Pz/JycmGhoZzc3OhoaGAgIAeHh4yMjIRERF3d3cmJiafn5+Xl5dISEgODg4+Pj4gICCDaAB+AAAEjUlEQVR4nO3d23KqMBQGYBZyEDmDgIgCWm19/yfcgNICuotkbATm/26UtNMwq0BCVgKCAAAAAAAAAAAAAAAAAAAAAAD/E8sFU+VZpbYOxJ1Zb9lriWflr3Khyp5fjR9FdSlRdg2XTLTmV/frLFeCaigJHXhVGFCoFx8RkSEIhksJybyqfqUibqUVcTpVTQqvX2TaCoKTK9Kk4xaQzac+l+rLmVz8p4qQKZOOm0Wc6qsPt2+TjltEH39Wg6Q1NnQ6dX480bhl6eHgphS1Cs3F60R7Cn6uAWanpunEzd1smptZblnOhjZes1Deiq9jkat//2Xvrtcxkbh5RGZz+3qe2g7Ff1WjrjQ2Jnq8Ff2luH2BubULQupz2QG77H20TCFuEYndojpuCacO3OexUzD+uOl+pt8V1nFbceqIiFRfSdNF9TH6uIm0eFB6i1tMLp+9sCm/9kv2txZCH3fcYrK0R+XZRjFN+UCfnO4Xih2hSJe8kJJiwzQVmXaKeX8ejINm/a+9vI6HfIoGt30x/arKXfFVopvuTcRILO7bg5pUengk/h3Ji5VG7QVeB/sgSuaP9TwYs+1dVxP6FQ0l57NwDor7J6//t6BjQcG7d2GClOMG7cFw+2kmit4spoRfV3Y27LA9ygZPWdyN4kM/5Xie5NSBN0N7wEKmhOskmXmwwxztwXA7tAcMzMsK7cFg6mHcA/UjJdMB7cFg0ipFezDcxx9OJ5ovMw3RHgymTnSC7JutaY/2YDDpfFT6fws6TlXWG4Yx83CUee5xM5K/myI5Y2ueS4NmQzov0R70k5L28qng4RRA6DpRa7qCkaA9eEruLjlNI52VmGJu687mxCJBwRVtsGqtxFf27t2YnB0pZQoeA5MDLcslQBr6uQPdloLxWgg0GweKymdVBI3pCzhl+xn12gha1UUav6cvTFdEsmoUhC19zzpV3RwzUHt81Qv1lOailzX6c79rRGvTXOooLUPMQ/3F/ufsjNqJKxFLE35x/rmh1/z2GmsPqxPYGGGGhDOTHXLObJRq2TAMlxAyDUxkJJ/Z2P4KS0yZBEhBszHvHp8DT1GdI+70mSzw+AE2emphRJjJHrkbNjHWGbHRzl/I6zP5wJ0+GwVJG0buJ7pyTJC0YSQtQ3TlmIjoyrFB0oaRuloiacNkhweJsNF5PZR3dpC0YSRjBTkb2z8jacMESRtGJqZUs1GdFHf6TCIkbdjoFwd3+kyQtGGEpA0j7ew/TtqYCRH5u+pEVrflayQwc7jlcdLmRCRGu5DSIqrqkbbrRY7kTluZtOlO31+TU33KtCnHO6uIXXLOOzZ6bpZ2Akfp7ct+ZQvH6+utToSxu45l510zciuJY1yvgDvErUtZt+O2fRQih9frUKcrfBAiE8mJXpvuC/vK11rdl0HH+dIt0QlXt353lzKz6shBj4DaY0weZVig+QTvOwMhlTkchXwMnDzlQrcEhFVe1vIcR9tzPLre7gflcLqIxOHTIiIrOORlktoovjqlELmcfpL4lS/dMlKa5VoVByNJAAAAAAAAAAAAAAAAAPBO/wB7QSxZU7dgSQAAAABJRU5ErkJggg==" alt="classpath hell"></p>
+<p>如上图，A包依赖了B包和C2包，而B包又依赖了C1包，在这个时候，由于所有的依赖包的路径都会写在classpath上面，让JVM从前往后地在这些路径上面寻早需要的依赖包，因此，若JVM先读取到了C1依赖包的classpath路径，那么C2这个依赖包，由于和C1只是版本上面的不同，因此JVM会误把C1路径中找到的依赖包也同样作用在C2上面，从而导致出现不可预期的错误。
+一般来说，当你看到你的代码在编译运行之后，出现了以下的错误，那就代表最麻烦的包冲突出现了：</p>
+<ol>
+<li>AbstractMethodError</li>
+<li>NoClassDefFoundError</li>
+<li>ClassNotFoundException</li>
+<li>LinkageError</li>
+</ol>
+<h1 id="maven包管理的原理">Maven包管理的原理</h1>
+<p>在Maven没有诞生之前，包冲突只能通过手动寻找冲突的包依赖，并把对应的包进行升级或者替换，但问题是，一个项目一般存在着很多很多的包依赖，手动寻找费时费力，效率太低。直到后来Maven的诞生，才使得解决包依赖的解决变得不再那么麻烦。</p>
+<p>首先我们先来了解一下Maven是如何对包进行管理的
+我们需要首先知道的是，Maven有一套约定俗成的规范，其中规定了，生产代码需要放在<code>src/main</code>目录下面，而测试代码则需要放在test/main目录下面。这个将在之后讲包管理的scope中有用。</p>
+<p>Maven会有中央仓库和本地仓库两个仓库
+本地仓库即字面意思在本地你电脑中存在的仓库，它默认位于<code>~/.m2</code>目录中，里面会放置一些经过下载的第三方包的缓存。
+而中央仓库即线上仓库的意思，一个包会含有<code>groupId</code>、<code>artifactId</code>、<code>version</code>三个字段，因此在中央仓库中，一个包存放的路径也是以这三个字段来存放的，具体会存放在<code>groupId/artifactId/version</code>这个位置。</p>
+<p>当一个项目需要使用一些第三方包的时候，你可以在pom文件中添加这些包的信息，这样Maven就会自动帮你下载这些包以及其相关依赖包到本地中缓存起来</p>
+<h1 id="maven如何解决包冲突">Maven如何解决包冲突</h1>
+<p>解决包冲突的一个原则：绝对不允许最终的classpath出现同名不同版本的jar包</p>
+<p>在Maven中，当出现包冲突的问题的时候，Maven会保留离项目最近的包，而去除其他有冲突的包，拿之前的例子来说：</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATcAAACiCAMAAAATIHpEAAAAe1BMVEX///8AAACIiIirq6vr6+u+vr7g4OD6+vouLi719fVMTEzk5OT5+fnU1NRkZGTy8vJdXV1paWnPz885OTm3t7eRkZFWVlaxsbE/Pz/JycmGhoZzc3OhoaGAgIAeHh4yMjIRERF3d3cmJiafn5+Xl5dISEgODg4+Pj4gICCDaAB+AAAEjUlEQVR4nO3d23KqMBQGYBZyEDmDgIgCWm19/yfcgNICuotkbATm/26UtNMwq0BCVgKCAAAAAAAAAAAAAAAAAAAAAAD/E8sFU+VZpbYOxJ1Zb9lriWflr3Khyp5fjR9FdSlRdg2XTLTmV/frLFeCaigJHXhVGFCoFx8RkSEIhksJybyqfqUibqUVcTpVTQqvX2TaCoKTK9Kk4xaQzac+l+rLmVz8p4qQKZOOm0Wc6qsPt2+TjltEH39Wg6Q1NnQ6dX480bhl6eHgphS1Cs3F60R7Cn6uAWanpunEzd1smptZblnOhjZes1Deiq9jkat//2Xvrtcxkbh5RGZz+3qe2g7Ff1WjrjQ2Jnq8Ff2luH2BubULQupz2QG77H20TCFuEYndojpuCacO3OexUzD+uOl+pt8V1nFbceqIiFRfSdNF9TH6uIm0eFB6i1tMLp+9sCm/9kv2txZCH3fcYrK0R+XZRjFN+UCfnO4Xih2hSJe8kJJiwzQVmXaKeX8ejINm/a+9vI6HfIoGt30x/arKXfFVopvuTcRILO7bg5pUengk/h3Ji5VG7QVeB/sgSuaP9TwYs+1dVxP6FQ0l57NwDor7J6//t6BjQcG7d2GClOMG7cFw+2kmit4spoRfV3Y27LA9ygZPWdyN4kM/5Xie5NSBN0N7wEKmhOskmXmwwxztwXA7tAcMzMsK7cFg6mHcA/UjJdMB7cFg0ipFezDcxx9OJ5ovMw3RHgymTnSC7JutaY/2YDDpfFT6fws6TlXWG4Yx83CUee5xM5K/myI5Y2ueS4NmQzov0R70k5L28qng4RRA6DpRa7qCkaA9eEruLjlNI52VmGJu687mxCJBwRVtsGqtxFf27t2YnB0pZQoeA5MDLcslQBr6uQPdloLxWgg0GweKymdVBI3pCzhl+xn12gha1UUav6cvTFdEsmoUhC19zzpV3RwzUHt81Qv1lOailzX6c79rRGvTXOooLUPMQ/3F/ufsjNqJKxFLE35x/rmh1/z2GmsPqxPYGGGGhDOTHXLObJRq2TAMlxAyDUxkJJ/Z2P4KS0yZBEhBszHvHp8DT1GdI+70mSzw+AE2emphRJjJHrkbNjHWGbHRzl/I6zP5wJ0+GwVJG0buJ7pyTJC0YSQtQ3TlmIjoyrFB0oaRuloiacNkhweJsNF5PZR3dpC0YSRjBTkb2z8jacMESRtGJqZUs1GdFHf6TCIkbdjoFwd3+kyQtGGEpA0j7ew/TtqYCRH5u+pEVrflayQwc7jlcdLmRCRGu5DSIqrqkbbrRY7kTluZtOlO31+TU33KtCnHO6uIXXLOOzZ6bpZ2Akfp7ct+ZQvH6+utToSxu45l510zciuJY1yvgDvErUtZt+O2fRQih9frUKcrfBAiE8mJXpvuC/vK11rdl0HH+dIt0QlXt353lzKz6shBj4DaY0weZVig+QTvOwMhlTkchXwMnDzlQrcEhFVe1vIcR9tzPLre7gflcLqIxOHTIiIrOORlktoovjqlELmcfpL4lS/dMlKa5VoVByNJAAAAAAAAAAAAAAAAAPBO/wB7QSxZU7dgSQAAAABJRU5ErkJggg==" alt="classpath hell"></p>
+<p>相比于C1来说，C2这个第三方包离项目更接近，因此Maven会自动帮你把C1去除，而保留C2。但是这种策略有时候是不完美的，因此有时候也需要我们人为地去维护它，但不管怎么说，由于Maven的诞生，使得我们对于第三方包的很多操作都变得轻松和简单了。</p>
+<p>接下来我们来说一下人为解决冲突的三种办法：</p>
+<ol>
+<li>直接依赖高版本依赖，这样Maven就能去除所有低版本的不合适的依赖了</li>
+<li>通过pom文件来排除包中的后代指定依赖</li>
+<li>通过Maven helper插件来解决包冲突问题</li>
+</ol>
+<p>pom文件中，可以通过设置scope标签，来指定一个包是否可以被生产代码和测试代码所引用：</p>
+<ol>
+<li>complie（生产代码以及测试代码均可见）</li>
+<li>test（只有测试代码可见）</li>
+<li>provided（只在编译的生产代码的时候生效，在运行时无效）</li>
+</ol>
 <pre><code></code></pre>
     </div>
 
