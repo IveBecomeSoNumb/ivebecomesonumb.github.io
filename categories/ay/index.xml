@@ -6,14 +6,14 @@
     <description>Recent content in Ay on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/ay/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/ay/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java Collection</title>
-      <link>http://localhost:1313/post/java-collection/</link>
-      <pubDate>Thu, 05 Nov 2020 16:01:23 +0800</pubDate>
+      <title>HTML 入门笔记 1</title>
+      <link>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Thu, 17 Dec 2020 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/java-collection/</guid>
-      <description>Map集合和Collection集合类总结 Java的数组有很多弊端：长度固定，不可增删，只能存储同一种数据类型，数组内元素的内存空间是连续分</description>
+      <guid>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <description>HTML 入门笔记 1 HTML = Hypertext Markup language 超文本标记语言 超文本标记语言是一种用于创建网页的标准标记语言。HTML 是一种基础技术，常与 CSS、JavaScript</description>
     </item>
     
     <item>
@@ -41,6 +41,15 @@
       
       <guid>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</guid>
       <description>开博记录贴！ 11-02号开通blog</description>
+    </item>
+    
+    <item>
+      <title>Java Collection</title>
+      <link>http://localhost:1313/post/java-collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/java-collection/</guid>
+      <description>Map集合和Collection集合类总结 Java的数组有很多弊端：长度固定，不可增删，只能存储同一种数据类型，数组内元素的内存空间是连续分</description>
     </item>
     
   </channel>
