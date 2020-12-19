@@ -9,36 +9,57 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/ay/</loc>
-    <lastmod>2020-12-17T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2020-12-17T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2020-12-17T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/frontend/</loc>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/frontend/</loc>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</loc>
-    <lastmod>2020-12-17T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2020-12-17T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2020-12-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/ay/</loc>
+    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -58,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2020-11-05T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-11-02T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -74,6 +88,12 @@
   <url>
     <loc>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</loc>
     <lastmod>2018-01-02T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

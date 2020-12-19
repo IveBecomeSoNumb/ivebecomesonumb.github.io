@@ -6,7 +6,7 @@
     <description>Recent content on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Dec 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Dec 2020 16:01:23 +0800</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,9 +32,9 @@
     </item>
     
     <item>
-      <title>HTML 入门笔记 1</title>
+      <title>HTML 入门笔记</title>
       <link>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
-      <pubDate>Thu, 17 Dec 2020 16:01:23 +0800</pubDate>
+      <pubDate>Sat, 05 Dec 2020 16:01:23 +0800</pubDate>
       
       <guid>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
       
@@ -53,7 +53,7 @@
 &lt;ul&gt;
 &lt;li&gt;创建一个 Index.html 文件，用 IDE 打开之后输入 &lt;code&gt;！+Tab&lt;/code&gt; , IDE 会补全代码，具体如下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5CUsers%5Calex%5CDesktop%5C%E9%A1%B9%E7%9B%AE%5CCapture.PNG&#34; alt=&#34;Capture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/12/18/MbIRh5ex8gda74y.png&#34; alt=&#34;Capture&#34;&gt;&lt;/p&gt;
 &lt;p&gt;其中&lt;code&gt;lang=&amp;quot;en&amp;quot;&lt;/code&gt; 可以改成&lt;code&gt;lang = &amp;quot;zh-CN&amp;quot;&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;HTML 常见章节标签：&lt;/p&gt;
@@ -209,6 +209,87 @@ git push xxxx
       <guid>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</guid>
       
         <description>&lt;p&gt;开博记录贴！ 11-02号开通blog&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML 常用标签</title>
+      <link>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      
+        <description>&lt;h1 id=&#34;html-常用标签&#34;&gt;HTML 常用标签&lt;/h1&gt;
+&lt;h2 id=&#34;a-标签111&#34;&gt;a 标签（11.1）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://baidu.com&#34;&gt;http://baidu.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://baidu.com&#34;&gt;https://baidu.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;//baidu.com (推荐这种，因为浏览器会自动适配网站)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;/a/b/c 和 a/b/c 的区别： /a 是把当前 http 服务的根目录，如果不是用服务器打开而是双击打开.html 文件的话就会找不到文件; a 是在当前目录下找这个文件&lt;/li&gt;
+&lt;li&gt;index.html 和./index.html 无区别&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;伪协议&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;javascript: ;&lt;/li&gt;
+&lt;li&gt;id(#id 号)&lt;/li&gt;
+&lt;li&gt;mailto:邮箱地址&lt;/li&gt;
+&lt;li&gt;tel:手机号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;target&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;_blank 新建空网站&lt;/li&gt;
+&lt;li&gt;_top 顶部网站&lt;/li&gt;
+&lt;li&gt;_self 当前网站&lt;/li&gt;
+&lt;li&gt;_praent 父类网站&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;table-标签112&#34;&gt;table 标签（11.2）&lt;/h2&gt;
+&lt;p&gt;thead 表头&lt;/p&gt;
+&lt;p&gt;tbody 表体&lt;/p&gt;
+&lt;p&gt;tfoot 表底&lt;/p&gt;
+&lt;p&gt;tr 表换行&lt;/p&gt;
+&lt;p&gt;th 表标题&lt;/p&gt;
+&lt;p&gt;td 表数据&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;img-标签113&#34;&gt;img 标签（11.3）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;属性：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;alt/weight/height/src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;事件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;onload/onerror&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;响应式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;max-width:100% (手机端可以有较好体验)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;小笔记：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;table{&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;border-collapse:collapse;&lt;/p&gt;
+&lt;p&gt;border-spacing:0;&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;可以让表格合并，变好看一点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;input 和 button 区别：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;button 里面可以加其他标签，添加样式，input 不可以&lt;/p&gt;
 </description>
       
     </item>
