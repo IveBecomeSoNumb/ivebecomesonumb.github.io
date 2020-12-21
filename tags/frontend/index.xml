@@ -6,7 +6,34 @@
     <description>Recent content in Frontend on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS知识总结</title>
+      <link>http://localhost:1313/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 20 Dec 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>CSS知识总结 浏览器渲染原理 步骤 根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSDOW） 将两棵树合并成一颗渲染树(Rend</description>
+    </item>
+    
+    <item>
+      <title>HTML 常用标签</title>
+      <link>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Sun, 20 Dec 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>HTML 常用标签 a 标签（11.1） 网址 http://baidu.com https://baidu.com //baidu.com (推荐这种，因为浏览器会自动适配网站) 路径 /a/b/c 和 a/b/c 的区别： /a 是把当前 http 服务的根目录，如果不是用服务器打开</description>
+    </item>
+    
+    <item>
+      <title>Java Collection</title>
+      <link>http://localhost:1313/post/java-collection/</link>
+      <pubDate>Sun, 20 Dec 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/java-collection/</guid>
+      <description>Map集合和Collection集合类总结 Java的数组有很多弊端：长度固定，不可增删，只能存储同一种数据类型，数组内元素的内存空间是连续分</description>
+    </item>
+    
     <item>
       <title>HTML 入门笔记</title>
       <link>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
@@ -14,15 +41,6 @@
       
       <guid>http://localhost:1313/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
       <description>HTML 入门笔记 1 HTML = Hypertext Markup language 超文本标记语言 超文本标记语言是一种用于创建网页的标准标记语言。HTML 是一种基础技术，常与 CSS、JavaScript</description>
-    </item>
-    
-    <item>
-      <title>HTML 常用标签</title>
-      <link>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
-      <description>HTML 常用标签 a 标签（11.1） 网址 http://baidu.com https://baidu.com //baidu.com (推荐这种，因为浏览器会自动适配网站) 路径 /a/b/c 和 a/b/c 的区别： /a 是把当前 http 服务的根目录，如果不是用服务器打开</description>
     </item>
     
   </channel>

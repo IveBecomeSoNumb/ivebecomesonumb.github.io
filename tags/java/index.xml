@@ -16,14 +16,5 @@
       <description>JVM工作原理 首先，我们先来了解一下JVM的工作原理，其实简单地概括性地说，JVM只会做两件事情： 执行一个类的字节码 在执行这个类的字节码的时</description>
     </item>
     
-    <item>
-      <title>Java Collection</title>
-      <link>http://localhost:1313/post/java-collection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/java-collection/</guid>
-      <description>Map集合和Collection集合类总结 Java的数组有很多弊端：长度固定，不可增删，只能存储同一种数据类型，数组内元素的内存空间是连续分</description>
-    </item>
-    
   </channel>
 </rss>
