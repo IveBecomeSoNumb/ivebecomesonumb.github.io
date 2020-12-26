@@ -10,34 +10,55 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/frontend/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/frontend/</loc>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</loc>
+    <lastmod>2020-12-26T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2020-12-20T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,20 +73,6 @@
   
   <url>
     <loc>http://localhost:1313/post/java-collection/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2020-12-20T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2020-12-20T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
