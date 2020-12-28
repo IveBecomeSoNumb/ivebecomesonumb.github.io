@@ -6,7 +6,7 @@
     <description>Recent content on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Dec 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 16:01:23 +0800</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,67 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JavaScript的诞生</title>
+      <link>http://localhost:1313/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Sun, 27 Dec 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      
+        <description>&lt;h1 id=&#34;javascript的诞生&#34;&gt;JavaScript的诞生&lt;/h1&gt;
+&lt;p&gt;1995年，布兰登艾克在网景公司为浏览器开发了JS功能（设计时间为10天），是与Java搭配使用的辅助脚本语言并且语法上有些类似的，能够使得非专业的网页作者也能很快上手。JS最初的命名为：Mocha，于95年底改名为LiveScript，同年12月，Netscape Navigator 2.0 Beta 3中部署时被重命名&lt;strong&gt;JavaScript&lt;/strong&gt;，当时网景公司与昇阳电脑公司组成的开发联盟为了让这门语言搭上Java这个编程语言“热词”，因此将其临时改名为JavaScript，日后这成为大众对这门语言有诸多误解的原因之一。&lt;/p&gt;
+&lt;p&gt;1996年11月，网景公司向ECMA提交了语言标准，由于版权问题，JS的语言标准叫做ECMAScript。俗称ES。他打击了1996年8月微软发布的IE3中的JScript。&lt;/p&gt;
+&lt;p&gt;一般来说，完整的JavaScript包括以下几个部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ECMAScript，描述了该语言的语法和基本对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ECMAScript于1997年6月诞生了第一版。&lt;/li&gt;
+&lt;li&gt;1999年12月诞生了第三版（IE6最流行的版本）&lt;/li&gt;
+&lt;li&gt;第四版流产&lt;/li&gt;
+&lt;li&gt;2009年2月发布了第五版&lt;/li&gt;
+&lt;li&gt;2015年6月发布了第六版&lt;/li&gt;
+&lt;li&gt;此后的每一年都发布一个新版本，并且以年份命名版本号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;文档对象模型（&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//zh.wikipedia.org/wiki/DOM&#34;&gt;DOM&lt;/a&gt;），描述处理&lt;strong&gt;网页内容&lt;/strong&gt;的方法和接口&lt;/li&gt;
+&lt;li&gt;浏览器对象模型（&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B&#34;&gt;BOM&lt;/a&gt;），描述与&lt;strong&gt;浏览器&lt;/strong&gt;进行交互的方法和接口&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;JavaScript的基本特点如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是一种解释性脚本语言（代码不进行预编译）。&lt;/li&gt;
+&lt;li&gt;主要用来向HTML页面添加&lt;strong&gt;交互行为&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;可以直接嵌入HTML页面，但写成单独的js文件有利于结构和行为的分离。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;JavaScript常用来完成以下任务：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;嵌入动态文本于HTML页面&lt;/li&gt;
+&lt;li&gt;对浏览器事件作出响应&lt;/li&gt;
+&lt;li&gt;读写HTML元素&lt;/li&gt;
+&lt;li&gt;在数据被提交到服务器之前验证数据&lt;/li&gt;
+&lt;li&gt;检测访客的浏览器信息&lt;/li&gt;
+&lt;li&gt;控制&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//zh.wikipedia.org/wiki/Cookie&#34;&gt;cookies&lt;/a&gt;，包括创建和修改等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;js的设计缺陷&#34;&gt;JS的设计缺陷&lt;/h3&gt;
+&lt;p&gt;缺陷产生的原因：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 设计阶段过于仓促&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JavaScript的设计只用了十天。&lt;/p&gt;
+&lt;p&gt;另一方面，这种语言的设计初衷，是为了解决一些简单的网页互动（比如，检查&amp;quot;用户名&amp;quot;是否填写），并没有考虑复杂应用的需要。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 没有先例&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Javascript同时结合了函数式编程和面向对象编程的特点，这很可能是历史上的第一例。而且直到今天为止，Javascript仍然是世界上唯一使用&lt;a href=&#34;https://link.zhihu.com/?target=http%3A//www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html&#34;&gt;Prototype继承模型&lt;/a&gt;的主要语言。这使得它没有设计先例可以参考。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 过早的标准化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Javascript的发展非常快，根本没有时间调整设计。&lt;/p&gt;
+&lt;p&gt;1995年5月，设计方案定稿；10月，解释器开发成功；12月，向市场推出，立刻被广泛接受，全世界的用户大量使用。Javascript缺乏一个从小到大、慢慢积累用户的过程，而是连续的爆炸式扩散增长。大量的既成网页和业余网页设计者的参与，使得调整语言规格困难重重。更糟的是，Javascript的规格还没来及调整，就固化了。&lt;/p&gt;
+&lt;p&gt;1996年8月，微软公司强势介入，宣布推出自己的脚本语言Jscript；11月，为了压制微软，网景公司决定申请JavaScript的国际标准；1997年6月，第一个国际标准ECMA-262正式颁布。设计缺陷还没有充分暴露就成了标准。&lt;/p&gt;
+&lt;p&gt;但是，尽管如此，JavaScript依然是目前编程能力很强大的一门语言，他有广泛的使用性。他也是网页编程的唯一语言。&lt;/p&gt;
+&lt;p&gt;相关链接：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/JavaScript#%E5%8E%86%E5%8F%B2&#34;&gt;JavaScrpit的历史&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html&#34;&gt;Javascript诞生记&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_javascript.html&#34;&gt;Javascript的10个设计缺陷&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript的诞生</title>
+      <link>http://localhost:1313/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Sun, 27 Dec 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <description>JavaScript的诞生 1995年，布兰登艾克在网景公司为浏览器开发了JS功能（设计时间为10天），是与Java搭配使用的辅助脚本语言并且</description>
+    </item>
+    
     <item>
       <title>浅析URL</title>
       <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</link>
