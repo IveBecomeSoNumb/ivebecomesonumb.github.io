@@ -537,6 +537,205 @@ git push xxxx
     </item>
     
     <item>
+      <title>JS语法</title>
+      <link>http://localhost:1313/post/js%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 02 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/js%E8%AF%AD%E6%B3%95/</guid>
+      
+        <description>&lt;h2 id=&#34;js语言&#34;&gt;JS语言&lt;/h2&gt;
+&lt;h3 id=&#34;js版本&#34;&gt;JS版本&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;历史版本
+&lt;ul&gt;
+&lt;li&gt;ES3 1999年&lt;/li&gt;
+&lt;li&gt;ES5 2009年&lt;/li&gt;
+&lt;li&gt;ES6 2015年&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;js语法&#34;&gt;JS语法&lt;/h2&gt;
+&lt;h3 id=&#34;表达式与语句&#34;&gt;表达式与语句&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;表达式
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1+2&lt;/code&gt;这个表达式的值为3&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;add(1, 2)&lt;/code&gt;这个表达式的值为函数&lt;code&gt;add&lt;/code&gt;的返回值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.log&lt;/code&gt;表达式的值为函数本身&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.log(3)&lt;/code&gt;表达式的值为&lt;code&gt;console.log&lt;/code&gt;的返回值，也就是&lt;code&gt;undefined&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;语句
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var a = 1&lt;/code&gt;是一个语句&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;表达式与语句的区别
+&lt;ul&gt;
+&lt;li&gt;表达式一般都有值，语句不一定有&lt;/li&gt;
+&lt;li&gt;语句一般会改变环境(声明、赋值)&lt;/li&gt;
+&lt;li&gt;以上并不绝对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;大小写敏感case-sensitive&#34;&gt;大小写敏感(Case Sensitive)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var a&lt;/code&gt;与&lt;code&gt;var A&lt;/code&gt;声明了两个不同变量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;object&lt;/code&gt;与&lt;code&gt;Object&lt;/code&gt;为两个不同变量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;function&lt;/code&gt;与&lt;code&gt;Function&lt;/code&gt;也是两个不同变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;空格与换行&#34;&gt;空格与换行&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;不影响语义的情况下没有影响
+&lt;ul&gt;
+&lt;li&gt;return后不能加换行(因为自动分号插入机制)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;标识符&#34;&gt;标识符&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;规则
+&lt;ul&gt;
+&lt;li&gt;第一个字符，可以使Unicode字母或者&amp;amp;或_或者中文&lt;/li&gt;
+&lt;li&gt;后面的字符可以再添加数字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;注释&#34;&gt;注释&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;//&lt;/code&gt; 单行注释&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/**/&lt;/code&gt; 多行注释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不好的注释
+&lt;ul&gt;
+&lt;li&gt;翻译代码的注释&lt;/li&gt;
+&lt;li&gt;过时的注释&lt;/li&gt;
+&lt;li&gt;无关的注释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;好的注释
+&lt;ul&gt;
+&lt;li&gt;采坑注释&lt;/li&gt;
+&lt;li&gt;为什么代码会这么写，遇到什么bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;区块block&#34;&gt;区块block&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;把代码包裹在一起&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;{
+  let a = 1
+  let b = 2
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;常与if/for/while/function合用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;if语句&#34;&gt;if语句&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;if(表达式) {语句} else {语句}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{}&lt;/code&gt;在语句只有一句时可省略，但不建议&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;switch语句&#34;&gt;switch语句&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;switch(fruit) {
+  case &#39;apple&#39;:
+    //...
+    break;
+  case &#39;bananab&#39;:
+    //...
+    break;
+  default:
+    //...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;三元表达式&#34;&gt;三元表达式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法
+&lt;ul&gt;
+&lt;li&gt;表达式 ？ 为真情况表达式 : 为假情况表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;短路逻辑&#34;&gt;&amp;amp;&amp;amp;短路逻辑&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a &amp;amp;&amp;amp; b &amp;amp;&amp;amp; c &amp;amp;&amp;amp; d&lt;/code&gt;取第一个假值或&lt;code&gt;d&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;短路逻辑-1&#34;&gt;||短路逻辑&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a || b || c || d&lt;/code&gt;取第一个真值或&lt;code&gt;d&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;while循环&#34;&gt;while循环&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法
+&lt;ul&gt;
+&lt;li&gt;while(表达式) {语句}&lt;/li&gt;
+&lt;li&gt;首先判断表达式真假&lt;/li&gt;
+&lt;li&gt;为真执行语句&lt;/li&gt;
+&lt;li&gt;执行完语句，重新判断表达式真假&lt;/li&gt;
+&lt;li&gt;表达式为假，跳出循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;for循环&#34;&gt;for循环&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法糖
+&lt;ul&gt;
+&lt;li&gt;for是while的语法糖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;语法
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;for(语句1; 表达式2; 语句三) { 循环体 }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;先执行语句1&lt;/li&gt;
+&lt;li&gt;判断表达式2的真假&lt;/li&gt;
+&lt;li&gt;如果为真，执行循环体，然后执行语句三&lt;/li&gt;
+&lt;li&gt;如果为假，跳出循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;break和continue&#34;&gt;break和continue&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;break
+&lt;ul&gt;
+&lt;li&gt;退出所有循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;continue
+&lt;ul&gt;
+&lt;li&gt;退出当前一次循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;label语句&#34;&gt;label语句&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;foo: {
+  console.log(1)
+  break foo
+  console.log(&#39;本行不会输出&#39;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;考点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;{
+  foo: 1
+}
+// 上面是什么？
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>开博客啦</title>
       <link>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</link>
       <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>

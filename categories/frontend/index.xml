@@ -61,5 +61,14 @@
       <description>HTML 入门笔记 1 HTML = Hypertext Markup language 超文本标记语言 超文本标记语言是一种用于创建网页的标准标记语言。HTML 是一种基础技术，常与 CSS、JavaScript</description>
     </item>
     
+    <item>
+      <title>JS语法</title>
+      <link>http://localhost:1313/post/js%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 02 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/js%E8%AF%AD%E6%B3%95/</guid>
+      <description>JS语言 JS版本 历史版本 ES3 1999年 ES5 2009年 ES6 2015年 JS语法 表达式与语句 表达式 1+2这个表达式的值为3 add(1, 2)这个表达式的值为函数ad</description>
+    </item>
+    
   </channel>
 </rss>
