@@ -636,24 +636,28 @@ git push xxxx
 &lt;/ul&gt;
 &lt;h3 id=&#34;查看属性&#34;&gt;查看属性&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;查看自身所有属性
+&lt;li&gt;
+&lt;p&gt;查看自身所有属性&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Object.keys(obj)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;查看自身属性 + 共有属性
+&lt;li&gt;
+&lt;p&gt;查看自身属性 + 共有属性&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;console.dir(obj)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;使用&lt;code&gt;Object.keys()&lt;/code&gt;分别传入&lt;code&gt;obj&lt;/code&gt;和&lt;code&gt;obj.__proto__&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;判断属性是否为自身属性
+&lt;li&gt;
+&lt;p&gt;判断属性是否为自身属性&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;obj.hasOwnProperty(&#39;toString&#39;)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;使用&lt;code&gt;in&lt;/code&gt;关键字，可以查看当前对象或者原型对象上是否有对应属性，使用&lt;code&gt;hasOwnProperty&lt;/code&gt;，可以查看当前对象上是否有特定属性&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;in&lt;/code&gt;关键字，可以查看当前对象或者原型对象上是否有对应属性，使用&lt;code&gt;hasOwnProperty&lt;/code&gt;，可以查看当前对象上是否有特定属性(&amp;lsquo;name&amp;rsquo; in obj和obj.hasOwnProperty(&amp;lsquo;name&amp;rsquo;) 的区别是前者会查看当前对象或原型对象上是否有name，后者只会查看当前对象上是否有name)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;查看指定属性
+&lt;li&gt;
+&lt;p&gt;查看指定属性&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;中括号语法
 &lt;ul&gt;

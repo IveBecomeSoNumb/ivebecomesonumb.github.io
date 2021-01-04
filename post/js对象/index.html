@@ -69,7 +69,7 @@
 <meta itemprop="description" content="JS对象 对象的定义 无序的数据集合 键值对的集合 声明对象 const obj = { &#39;name&#39;: &#39;Frank&#39;, &#39;age&#39;: 18 } const obj = new Object({ &#39;name&#39;: &#39;Frank&#39; }) console.log({ &#39;name&#39;: &#39;Frank&#39;, &#39;age&#39;: 18 }) 细节 键名为字符串，不是标识符，可以包含任意">
 <meta itemprop="datePublished" content="2020-01-03T16:01:23+08:00" />
 <meta itemprop="dateModified" content="2020-01-03T16:01:23+08:00" />
-<meta itemprop="wordCount" content="961">
+<meta itemprop="wordCount" content="1069">
 
 
 
@@ -456,24 +456,28 @@
 </ul>
 <h3 id="查看属性">查看属性</h3>
 <ul>
-<li>查看自身所有属性
+<li>
+<p>查看自身所有属性</p>
 <ul>
 <li><code>Object.keys(obj)</code></li>
 </ul>
 </li>
-<li>查看自身属性 + 共有属性
+<li>
+<p>查看自身属性 + 共有属性</p>
 <ul>
 <li><code>console.dir(obj)</code></li>
 <li>使用<code>Object.keys()</code>分别传入<code>obj</code>和<code>obj.__proto__</code></li>
 </ul>
 </li>
-<li>判断属性是否为自身属性
+<li>
+<p>判断属性是否为自身属性</p>
 <ul>
 <li><code>obj.hasOwnProperty('toString')</code></li>
-<li>使用<code>in</code>关键字，可以查看当前对象或者原型对象上是否有对应属性，使用<code>hasOwnProperty</code>，可以查看当前对象上是否有特定属性</li>
+<li>使用<code>in</code>关键字，可以查看当前对象或者原型对象上是否有对应属性，使用<code>hasOwnProperty</code>，可以查看当前对象上是否有特定属性(&lsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别是前者会查看当前对象或原型对象上是否有name，后者只会查看当前对象上是否有name)</li>
 </ul>
 </li>
-<li>查看指定属性
+<li>
+<p>查看指定属性</p>
 <ul>
 <li>中括号语法
 <ul>
