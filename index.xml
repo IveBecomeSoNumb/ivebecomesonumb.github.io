@@ -537,6 +537,173 @@ git push xxxx
     </item>
     
     <item>
+      <title>JS对象</title>
+      <link>http://localhost:1313/post/js%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 03 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/js%E5%AF%B9%E8%B1%A1/</guid>
+      
+        <description>&lt;h2 id=&#34;js对象&#34;&gt;JS对象&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;对象的定义
+&lt;ul&gt;
+&lt;li&gt;无序的数据集合&lt;/li&gt;
+&lt;li&gt;键值对的集合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;声明对象
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;const obj = { &#39;name&#39;: &#39;Frank&#39;, &#39;age&#39;: 18 }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const obj = new Object({ &#39;name&#39;: &#39;Frank&#39; })&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.log({ &#39;name&#39;: &#39;Frank&#39;, &#39;age&#39;: 18 })&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;细节
+&lt;ul&gt;
+&lt;li&gt;键名为字符串，不是标识符，可以包含任意字符&lt;/li&gt;
+&lt;li&gt;引号可省略，省略后只能写标识符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;即使省略引号，键名仍为字符串&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;Object.keys()&lt;/code&gt;可获取对象的所有键名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用变量的值作为属性名
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;const p1 = &#39;name&#39;&lt;/code&gt; 定义一个变量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const obj = { p1: &#39;Frank&#39; } // { &#39;p1&#39;: &#39;Frank&#39; }&lt;/code&gt; 直接书写，键名为p1&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const obj = { [p1]: &#39;Frank&#39; } // { &#39;name&#39;: &#39;Frank&#39; }&lt;/code&gt; 使用方括号包裹，键名为变量p1的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对比
+&lt;ul&gt;
+&lt;li&gt;不加[]的属性名会自动转换为字符串&lt;/li&gt;
+&lt;li&gt;加了[]后会当做表达式求值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对象的隐藏属性
+&lt;ul&gt;
+&lt;li&gt;JS中每个对象都有一个隐藏属性&lt;/li&gt;
+&lt;li&gt;这个隐藏属性存储着其共有属性和方法组成的对象的地址&lt;/li&gt;
+&lt;li&gt;这个由其公共属性和方法组成的对象叫做原型&lt;/li&gt;
+&lt;li&gt;也就是说每个对象都有一个隐藏属性，存储着其原型的地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Symbol也可作为属性名
+&lt;ul&gt;
+&lt;li&gt;迭代时会使用&lt;/li&gt;
+&lt;li&gt;可见&lt;a href=&#34;https://blingblingredstar.github.io/2019/05/02/JavaScript-The-Recent-Parts/#Data-Structure-Without-Iterators&#34;&gt;这里&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;对象属性的增删改查&#34;&gt;对象属性的增删改查&lt;/h2&gt;
+&lt;h3 id=&#34;删除属性&#34;&gt;删除属性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;pre&gt;&lt;code&gt;delete obj.propertyName
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;delete obj[&#39;propertyName&#39;]
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;可以删除obj的propertyName属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不含属性名&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#39;propertyName&#39; in obj === false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;含有属性，但值为undefined&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#39;property&#39; in obj &amp;amp;&amp;amp; obj.property === undefined&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;原型对象&#34;&gt;原型对象&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;每个对象都有一个原型对象(使用Object.create(null)创建的除外)
+&lt;ul&gt;
+&lt;li&gt;原型对象保存着实例对象的共有属性和方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;实例对象的原型对象也是对象
+&lt;ul&gt;
+&lt;li&gt;所以原型对象也有原型对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const obj = {}&lt;/code&gt;，obj的原型对象也是所有Object的实例对象的原型对象&lt;/li&gt;
+&lt;li&gt;这个原型对象包含了所有对象的公共属性和方法，是对象的根&lt;/li&gt;
+&lt;li&gt;这个原型对象的原型指向了null(原型链的最终指向)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;查看属性&#34;&gt;查看属性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;查看自身所有属性
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Object.keys(obj)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;查看自身属性 + 共有属性
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;console.dir(obj)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;Object.keys()&lt;/code&gt;分别传入&lt;code&gt;obj&lt;/code&gt;和&lt;code&gt;obj.__proto__&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;判断属性是否为自身属性
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;obj.hasOwnProperty(&#39;toString&#39;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;in&lt;/code&gt;关键字，可以查看当前对象或者原型对象上是否有对应属性，使用&lt;code&gt;hasOwnProperty&lt;/code&gt;，可以查看当前对象上是否有特定属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;查看指定属性
+&lt;ul&gt;
+&lt;li&gt;中括号语法
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;obj[&#39;key&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;点语法
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;obj.key&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;两种语法功能上没有区别，使用中括号语法，可以使用变量来访问属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;修改增加属性&#34;&gt;修改/增加属性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;直接赋值
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;const obj = { &#39;name&#39;: &#39;Frank&#39; }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;obj.name = &#39;Frank&#39; // name是字符串&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;obj[&#39;name&#39;] = &#39;Frank&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;obj[&#39;na&#39; + &#39;me&#39;] = &#39;Frank&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const key = &#39;name&#39;; obj[key] = &#39;Frank&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;批量赋值
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Object.assign(obj, {&#39;age&#39;: 18, &#39;gender&#39;: &#39;man&#39;})&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改/增加原型对象属性
+&lt;ul&gt;
+&lt;li&gt;无法通过自身修改或增加原型对象属性&lt;/li&gt;
+&lt;li&gt;一般来说，不推荐修改原型&lt;/li&gt;
+&lt;li&gt;如果要修改，通过构造函数的原型属性进行修改&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改原型对象
+&lt;ul&gt;
+&lt;li&gt;不推荐使用&lt;code&gt;__proto__&lt;/code&gt;属性进行修改&lt;/li&gt;
+&lt;li&gt;在创建时直接使用&lt;code&gt;Object.create()&lt;/code&gt;，传入一个对象作为新建对象的原型对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>JS语法</title>
       <link>http://localhost:1313/post/js%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Thu, 02 Jan 2020 16:01:23 +0800</pubDate>
