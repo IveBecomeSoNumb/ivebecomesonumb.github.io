@@ -537,6 +537,88 @@ git push xxxx
     </item>
     
     <item>
+      <title>JS函数执行的时机</title>
+      <link>http://localhost:1313/post/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Fri, 10 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E6%97%B6%E6%9C%BA/</guid>
+      
+        <description>&lt;h1 id=&#34;js函数执行的时机&#34;&gt;JS函数执行的时机&lt;/h1&gt;
+&lt;h2 id=&#34;一段代码&#34;&gt;一段代码&lt;/h2&gt;
+&lt;p&gt;在讨论JS函数执行的时机之前，我们先来看一段代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let i = 0
+for(i = 0; i&amp;lt;6; i++){
+  setTimeout(()=&amp;gt;{
+    console.log(i)
+  },0)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行上述代码，最终控制台输出结果是什么？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;setTimeout的id, 0, 1, 2, 3, 4, 5&lt;/li&gt;
+&lt;li&gt;setTimeout的id, 6, 6, 6, 6, 6, 6&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可能有人会写出上述代码，并期望得到结果1，但实际控制台会输出结果2。&lt;/p&gt;
+&lt;p&gt;本篇文章会分析js的执行过程，来分析为什么会输出结果2，涉及到了调用栈，作用域与闭包，以及event loop与macro task queue，并在最后提出几种能够得到结果2的方法。&lt;/p&gt;
+&lt;h2 id=&#34;使用let关键字更改输出&#34;&gt;使用let关键字更改输出&lt;/h2&gt;
+&lt;p&gt;这里的关键点，我认为有以下几点&lt;/p&gt;
+&lt;p&gt;首先是setTimeout内回调函数的执行时间，其次是setTimeout内回调函数使用的i变量的作用域&lt;/p&gt;
+&lt;p&gt;其实搞清i的作用域我们就知道，整个执行过程中，我们使用了一个i变量，并在最后输出6次i。&lt;/p&gt;
+&lt;p&gt;那么如果不更改setTimeout内的代码，有没有办法记录下i的值，并在之后输出呢，也就是实现控制台输出0, 1, 2, 3, 4, 5的效果呢&lt;/p&gt;
+&lt;p&gt;很显然，我们需要6个额外的变量来保存i每次循环时的值&lt;/p&gt;
+&lt;p&gt;在ES6之前，js并没有块级作用域，但在ES6新出的&lt;code&gt;let&lt;/code&gt;和&lt;code&gt;const&lt;/code&gt;中，使用这两个关键字会自动将其所在的{}变更为一个新的作用域。&lt;/p&gt;
+&lt;p&gt;而且为了记录for循环每次的i的值，js还额外做了一些工作，会将for循环的{}变成一个新的作用域。&lt;/p&gt;
+&lt;p&gt;此时我们改写代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for(let i = 0; i &amp;lt; 6; i++) {
+  setTimeout(() =&amp;gt; console.log(i))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了理解，我会将代码转化如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  let _i = 0
+  while(_i &amp;lt; 6) {
+    const i = _i
+    setTimeout(() =&amp;gt; { console.log(i) })
+    _i++
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时在js执行完毕后，根据作用域链，查找到for循环的{}内，因为每次执行都创建新的作用域，所以每一轮循环都会有一个“新的i”，也就是类似于js保存了i变量此时的快照，所以总共有6个i，并且在for循环外是访问不到的，也就是setTimeout内的&lt;code&gt;console.log(i)&lt;/code&gt;携带了一个闭包。&lt;/p&gt;
+&lt;p&gt;关于闭包的定义及使用，如果有不清楚的小伙伴可以多查找一些资料。&lt;/p&gt;
+&lt;p&gt;这里也推荐一个&lt;a href=&#34;https://www.youtube.com/playlist?list=PLWrQZnG8l0E4kd1T_nyuVoxQUaYEWFgcD&#34;&gt;系列视频&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;既然我们通过使用&lt;code&gt;let&lt;/code&gt;关键字，来实现效果，并且其核心原理就是增加新的作用域，那么其实我们也可以使用&lt;code&gt;let&lt;/code&gt;和&lt;code&gt;const&lt;/code&gt;来声明新变量的方式来实现同样的效果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let i
+for (i = 0; i &amp;lt; 6; i++) {
+  const j = i
+  setTimeout(() =&amp;gt; {
+    console.log(j)
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里我使用了&lt;code&gt;const&lt;/code&gt;关键字来声明j变量，以便更明确的标明j变量是一个新的变量。&lt;/p&gt;
+&lt;h2 id=&#34;使用立即执行函数来创建作用域更改输出&#34;&gt;使用立即执行函数来创建作用域，更改输出&lt;/h2&gt;
+&lt;p&gt;那么，如果不适用&lt;code&gt;let&lt;/code&gt;和&lt;code&gt;const&lt;/code&gt;关键字呢？&lt;/p&gt;
+&lt;p&gt;我们可以使用立即执行函数来创建作用域&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let i
+for (i = 0; i &amp;lt; 6; i++) {
+  ;(function() {
+    var j = i
+    setTimeout(() =&amp;gt; {
+      console.log(j)
+    })
+  })()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果我们不想修改&lt;code&gt;console.log(i)&lt;/code&gt;，还可以写为如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let i
+for (i = 0; i &amp;lt; 6; i++) {
+  ;(function(i) {
+    setTimeout(() =&amp;gt; {
+      console.log(i)
+    })
+  })(i)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时每执行一次循环，就会将i的值作为参数传递给立即执行函数，&lt;code&gt;console.log(i)&lt;/code&gt;中i的值也就在进入macro task queue前就已确定。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>JS对象</title>
       <link>http://localhost:1313/post/js%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Fri, 03 Jan 2020 16:01:23 +0800</pubDate>
