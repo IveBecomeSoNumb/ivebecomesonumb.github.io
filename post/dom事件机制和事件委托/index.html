@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>jQuery - Ay&#39;s Blog</title>
+  <title>DOM事件机制和事件委托 - Ay&#39;s Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Alex" />
-  <meta name="description" content="jQuery 了解jQuery 在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的" />
+  <meta name="description" content="DOM事件机制和事件委托 一、简介 事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。 事件流有三个阶段" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.77.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/jquery/" />
+<link rel="canonical" href="http://localhost:1313/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
 
 
 
@@ -59,24 +59,24 @@
 
 
 
-<meta property="og:title" content="jQuery" />
-<meta property="og:description" content="jQuery 了解jQuery 在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的" />
+<meta property="og:title" content="DOM事件机制和事件委托" />
+<meta property="og:description" content="DOM事件机制和事件委托 一、简介 事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。 事件流有三个阶段" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/jquery/" />
+<meta property="og:url" content="http://localhost:1313/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" />
 <meta property="article:published_time" content="2020-01-23T16:01:23+08:00" />
 <meta property="article:modified_time" content="2020-01-23T16:01:23+08:00" />
-<meta itemprop="name" content="jQuery">
-<meta itemprop="description" content="jQuery 了解jQuery 在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的">
+<meta itemprop="name" content="DOM事件机制和事件委托">
+<meta itemprop="description" content="DOM事件机制和事件委托 一、简介 事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。 事件流有三个阶段">
 <meta itemprop="datePublished" content="2020-01-23T16:01:23+08:00" />
 <meta itemprop="dateModified" content="2020-01-23T16:01:23+08:00" />
-<meta itemprop="wordCount" content="1178">
+<meta itemprop="wordCount" content="1149">
 
 
 
 <meta itemprop="keywords" content="Frontend," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="jQuery"/>
-<meta name="twitter:description" content="jQuery 了解jQuery 在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的"/>
+<meta name="twitter:title" content="DOM事件机制和事件委托"/>
+<meta name="twitter:description" content="DOM事件机制和事件委托 一、简介 事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。 事件流有三个阶段"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -338,7 +338,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">jQuery</h1>
+      <h1 class="post-title">DOM事件机制和事件委托</h1>
       
       <div class="post-meta">
         <time datetime="2020-01-23" class="post-time">
@@ -363,55 +363,88 @@
 
     
     <div class="post-content">
-      <h1 id="jquery">jQuery</h1>
-<h2 id="了解jquery">了解jQuery</h2>
-<p>在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的库，我们可以通过jQuery学习很多封装技巧，根据<a href="https://trends.builtwith.com/javascript/jQuery">Built width</a>的统计，jQuery的使用数量仍在逐年上涨。jQuery作为一个封装良好的DOM库，jQuery能够如此流行还要归功于其良好的设计模式，使用起来相当便利，作为前端新人，通过学习jQuery，了解一些jQuery的设计思想，无论是对于今后学习其他框架，还是打牢js基础，都是很有必要的。</p>
-<h2 id="jquery的使用方法">jQuery的使用方法</h2>
-<h3 id="使用jquery选择dom元素">使用jQuery选择DOM元素</h3>
-<p>作为一个封装良好的DOM库，使用jQuery往往从选择一个DOM元素开始，然后对其进行某种操作。</p>
-<p>我们可以通过使用<code>jQuery()</code>或者更加简洁的<code>$()</code>来获取一个DOM元素。</p>
-<pre><code>$('div') // 获取页面所有div元素
+      <h1 id="dom事件机制和事件委托">DOM事件机制和事件委托</h1>
+<h1 id="一简介">一、简介</h1>
+<p>事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。</p>
+<p>事件流有三个阶段</p>
+<ul>
+<li>事件捕获阶段</li>
+<li>处于目标阶段</li>
+<li>事件冒泡阶段</li>
+</ul>
+<h2 id="事件捕获和事件冒泡">事件捕获和事件冒泡</h2>
+<p>事件捕获：事件从最外层父元素到最里层子元素的顺序触发，如document &gt; html &gt; body &gt; div &gt; p。</p>
+<p>事件冒泡：事件从最里层子元素到最外层父元素的顺序触发，如p &lt; div &lt; body &lt; html &lt; document。</p>
+<p><img src="https://i.loli.net/2021/01/24/9lXUHMgVYsBQaC1.png" alt="v2.png"></p>
+<p>因为有捕获和冒泡两种传播方式，W3C制定了一个标准可以让我们自己选择使用哪种传播方式。我们在使用addEventListener监听事件时，<strong>addEventListener(&lsquo;click&rsquo;,fn,bool)</strong> ，如果第三个参数bool不传或者为falsy,那么我们会在冒泡阶段调用fn，如果第三个参数bool为true，那么我们会在捕获阶段调用fn。</p>
+<p><img src="https://i.loli.net/2021/01/24/Yw5DC3IJnWtVTL9.png" alt="image.png"></p>
+<h2 id="target和currenttarget">target和currentTarget</h2>
+<p>e.target为用户操作的元素</p>
+<p>e.currentTarget是程序员监听的元素</p>
+<pre><code>&lt;div&gt;
+   &lt;span&gt;我是文字&lt;/span&gt;
+ &lt;/div&gt;
+</code></pre><p>假设我们监听的是div元素，但用户实际点击的是文字内容，那么</p>
+<p>e.target指向span元素</p>
+<p>e.currentTarget指向div元素</p>
+<h2 id="eventstoppropagation阻止事件冒泡">event.stopPropagation()阻止事件冒泡</h2>
+<p>当事件使用 <code>event.stopPropagation()</code> 方法将阻止事件冒泡到其父元素，代码示例如下：</p>
+<pre><code>&lt;div id=&quot;parent&quot; style=&quot;width: 200px; height: 200px; border: 1px solid springgreen;&quot;&gt;
+        &lt;div id=&quot;son&quot; style=&quot;width: 100px; height: 100px; border: 1px solid blue;&quot;&gt;son&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        parent.addEventListener('click', () =&gt; {
+            console.log('我是parent');
+        })
+        son.addEventListener('click', (e) =&gt; {
+            console.log('我是son');
+            e.stopPropagation(); // 中断事件冒泡
+        })
+    &lt;/script&gt;
+</code></pre><p><img src="https://i.loli.net/2021/01/24/7uHA39JYGsNl8FP.png" alt="image.png"></p>
+<h2 id="eventpreventdefault阻止默认事件">event.preventDefault()阻止默认事件</h2>
+<p>如果调用这个方法，默认事件行为将不再触发。什么是默认事件？例如表单一点击提交按钮 <code>submit</code> 跳转页面、 <code>a</code> 标签默认页面跳转或是锚点定位等。</p>
+<p>举个例子：</p>
+<p>给 <code>a</code> 标签添加点击事件，当用户点击文字就阻止 <code>a</code> 标签的默认页面跳转功能</p>
+<pre><code> &lt;a href=&quot;https://www.baidu.com&quot; id=&quot;x&quot;&gt;百度一下&lt;/a&gt;
+    &lt;script&gt;
+        x.addEventListener('click', (e) =&gt; {
+            e.preventDefault();
+        })
+    &lt;/script&gt;
+</code></pre><p><img src="https://i.loli.net/2021/01/24/qkuZgpJWrvEyb3t.png" alt="image.png"></p>
+<h1 id="二事件委托">二、事件委托</h1>
+<p>由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件，这种方法叫做事件委托。</p>
+<p>举个例子：</p>
+<p>有一个div元素，div元素里有大量的button按钮，我们需要在点击每个button按钮的时候响应一个事件，怎么做？</p>
+<pre><code>&lt;div id=&quot;container&quot;&gt;
+    &lt;button&gt;1&lt;/button&gt;
+    &lt;button&gt;2&lt;/button&gt;
+    &lt;button&gt;3&lt;/button&gt;
+    &lt;button&gt;4&lt;/button&gt;
+    &lt;button&gt;5&lt;/button&gt;
+    &lt;button&gt;6&lt;/button&gt;
+    &lt;button&gt;7&lt;/button&gt;
+    &lt;button&gt;8&lt;/button&gt;
+    &lt;button&gt;9&lt;/button&gt;
+    &lt;button&gt;10&lt;/button&gt;
+  &lt;/div&gt;
+</code></pre><p>实现的JS代码：</p>
+<pre><code>// 监听父元素 div#container
+container.addEventListener('click',(e)=&gt;{
+    const t = e.target
+    if(t.matches('button')){
+    console.log('点击了button')
+    }
+})
+</code></pre><p>思路：</p>
+<ol>
+<li>首先监听父元素</li>
+<li>然后根据浏览器传进去的事件信息，拿到当前点击元素e.target</li>
+<li>再判断当前点击元素是不是button，如果是，就输出log语句</li>
+</ol>
+<p>综上所述利用事件委托可以有效减少内存消耗，提高性能。</p>
 
-$('.red') // 获取所有class包含red的元素
-
-$('#red') // 获取id为red的元素
-
-$('input[name=firstname]') // 获取name属性为firstname的input元素
-
-$('a:first') // 获取页面中第一个a元素
-
-$('li:odd') // 获取奇数li
-</code></pre><p>其他选择方式，参见<a href="https://www.jquery123.com/category/selectors/">选择器</a></p>
-<h3 id="操作dom元素">操作DOM元素</h3>
-<p>jQuery的设计思想在于选择DOM元素，并对其进行操作，但由于DOM API的复杂性，使用jQuery选择DOM元素后并不会返回DOM对象，而是一个jQuery对象，通过操作jQuery对象，即可操作使用jQuery选中的DOM对象，这极大的方便了DOM元素的可操作性，也由于jQuery出色的封装，使得常用属性操作也非常方便。</p>
-<h4 id="链式操作">链式操作</h4>
-<p>正因为使用jQuery选择DOM后返回一个jQuery对象，所以我们可以使用链式操作，类似如下</p>
-<pre><code>$('.red') // 找到指定元素集合
-  .find('li') // 找到集合中特定部分
-  .eq(2) // 选择指定元素
-  .text('Hello') // 对其进行操作
-</code></pre><h4 id="gettersetter">getter/setter</h4>
-<p>在jQuery中，部分API会根据参数不同来改变API的行为，其中，比较方便的一项就是如果指定参数，就将API作为一个setter使用，将属性设置为指定的值；如果不传入参数，那就作为getter使用，返回元素指定属性的值</p>
-<pre><code>$('h1').text() // 返回h1的文本内容
-
-$('h1').text('hello') // 设置h1的文本内容为hello
-</code></pre><h4 id="创建元素">创建元素</h4>
-<p>使用jQuery，我们可以方便的创建元素</p>
-<pre><code>$('&lt;div&gt;Hello world&lt;/div&gt;') // 创建一个div元素
-  .append($('.red')) // 插入指定元素集之后
-</code></pre><p>关于使用jQuery创建DOM元素，更多信息可以查看<a href="https://www.jquery123.com/jQuery/">这里</a></p>
-<p>其他DOM操作，可以查看<a href="https://www.jquery123.com/category/manipulation/">这里</a></p>
-<h4 id="移动元素">移动元素</h4>
-<p>通过jQuery提供的API的组合，我们可以移动一个DOM元素到指定的位置。</p>
-<pre><code>$('.red').insertAfter($('.green')) // 将class包含red的元素插入class包含green的元素之后
-
-$('.green').after($('.red')) // 将class包含red的元素放在class包含green的后面
-</code></pre><p>类似还有<code>.insertBefore()</code>，<code>.before()</code>，<code>.appendTo()</code>，<code>.append()</code>，<code>.prependTo()</code>和<code>.prepend()</code></p>
-<h4 id="修改dom属性">修改DOM属性</h4>
-<pre><code>$('div').addClass('.red') // 给所有div添加样式类red
-
-$('div').css({width: '200px'}) // 将所有div宽度设置为200px
-</code></pre>
     </div>
 
     
@@ -448,7 +481,7 @@ $('div').css({width: '200px'}) // 将所有div宽度设置为200px
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">
+          <a class="prev" href="/post/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -458,12 +491,12 @@ $('div').css({width: '200px'}) // 将所有div宽度设置为200px
 </svg>
 
             </i>
-            <span class="prev-text nav-default">DOM事件机制和事件委托</span>
+            <span class="prev-text nav-default">如何用 hugo 搭建个人博客</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E6%97%B6%E6%9C%BA/">
-            <span class="next-text nav-default">JS函数执行的时机</span>
+          <a class="next" href="/post/jquery/">
+            <span class="next-text nav-default">jQuery</span>
             <span class="prev-text nav-mobile">Next</span>
             
             <i class="iconfont">

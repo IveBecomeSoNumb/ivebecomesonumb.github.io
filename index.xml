@@ -537,6 +537,98 @@ git push xxxx
     </item>
     
     <item>
+      <title>DOM事件机制和事件委托</title>
+      <link>http://localhost:1313/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
+      <pubDate>Thu, 23 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
+      
+        <description>&lt;h1 id=&#34;dom事件机制和事件委托&#34;&gt;DOM事件机制和事件委托&lt;/h1&gt;
+&lt;h1 id=&#34;一简介&#34;&gt;一、简介&lt;/h1&gt;
+&lt;p&gt;事件流是一个事件沿着特定数据结构传播的过程。冒泡和捕获是事件流在DOM中两种不同的传播方式。&lt;/p&gt;
+&lt;p&gt;事件流有三个阶段&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;事件捕获阶段&lt;/li&gt;
+&lt;li&gt;处于目标阶段&lt;/li&gt;
+&lt;li&gt;事件冒泡阶段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;事件捕获和事件冒泡&#34;&gt;事件捕获和事件冒泡&lt;/h2&gt;
+&lt;p&gt;事件捕获：事件从最外层父元素到最里层子元素的顺序触发，如document &amp;gt; html &amp;gt; body &amp;gt; div &amp;gt; p。&lt;/p&gt;
+&lt;p&gt;事件冒泡：事件从最里层子元素到最外层父元素的顺序触发，如p &amp;lt; div &amp;lt; body &amp;lt; html &amp;lt; document。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2021/01/24/9lXUHMgVYsBQaC1.png&#34; alt=&#34;v2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因为有捕获和冒泡两种传播方式，W3C制定了一个标准可以让我们自己选择使用哪种传播方式。我们在使用addEventListener监听事件时，&lt;strong&gt;addEventListener(&amp;lsquo;click&amp;rsquo;,fn,bool)&lt;/strong&gt; ，如果第三个参数bool不传或者为falsy,那么我们会在冒泡阶段调用fn，如果第三个参数bool为true，那么我们会在捕获阶段调用fn。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2021/01/24/Yw5DC3IJnWtVTL9.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;target和currenttarget&#34;&gt;target和currentTarget&lt;/h2&gt;
+&lt;p&gt;e.target为用户操作的元素&lt;/p&gt;
+&lt;p&gt;e.currentTarget是程序员监听的元素&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div&amp;gt;
+   &amp;lt;span&amp;gt;我是文字&amp;lt;/span&amp;gt;
+ &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;假设我们监听的是div元素，但用户实际点击的是文字内容，那么&lt;/p&gt;
+&lt;p&gt;e.target指向span元素&lt;/p&gt;
+&lt;p&gt;e.currentTarget指向div元素&lt;/p&gt;
+&lt;h2 id=&#34;eventstoppropagation阻止事件冒泡&#34;&gt;event.stopPropagation()阻止事件冒泡&lt;/h2&gt;
+&lt;p&gt;当事件使用 &lt;code&gt;event.stopPropagation()&lt;/code&gt; 方法将阻止事件冒泡到其父元素，代码示例如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;parent&amp;quot; style=&amp;quot;width: 200px; height: 200px; border: 1px solid springgreen;&amp;quot;&amp;gt;
+        &amp;lt;div id=&amp;quot;son&amp;quot; style=&amp;quot;width: 100px; height: 100px; border: 1px solid blue;&amp;quot;&amp;gt;son&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;script&amp;gt;
+        parent.addEventListener(&#39;click&#39;, () =&amp;gt; {
+            console.log(&#39;我是parent&#39;);
+        })
+        son.addEventListener(&#39;click&#39;, (e) =&amp;gt; {
+            console.log(&#39;我是son&#39;);
+            e.stopPropagation(); // 中断事件冒泡
+        })
+    &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2021/01/24/7uHA39JYGsNl8FP.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;eventpreventdefault阻止默认事件&#34;&gt;event.preventDefault()阻止默认事件&lt;/h2&gt;
+&lt;p&gt;如果调用这个方法，默认事件行为将不再触发。什么是默认事件？例如表单一点击提交按钮 &lt;code&gt;submit&lt;/code&gt; 跳转页面、 &lt;code&gt;a&lt;/code&gt; 标签默认页面跳转或是锚点定位等。&lt;/p&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;p&gt;给 &lt;code&gt;a&lt;/code&gt; 标签添加点击事件，当用户点击文字就阻止 &lt;code&gt;a&lt;/code&gt; 标签的默认页面跳转功能&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;a href=&amp;quot;https://www.baidu.com&amp;quot; id=&amp;quot;x&amp;quot;&amp;gt;百度一下&amp;lt;/a&amp;gt;
+    &amp;lt;script&amp;gt;
+        x.addEventListener(&#39;click&#39;, (e) =&amp;gt; {
+            e.preventDefault();
+        })
+    &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2021/01/24/qkuZgpJWrvEyb3t.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二事件委托&#34;&gt;二、事件委托&lt;/h1&gt;
+&lt;p&gt;由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件，这种方法叫做事件委托。&lt;/p&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;p&gt;有一个div元素，div元素里有大量的button按钮，我们需要在点击每个button按钮的时候响应一个事件，怎么做？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
+    &amp;lt;button&amp;gt;1&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;2&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;3&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;4&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;5&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;6&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;7&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;8&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;9&amp;lt;/button&amp;gt;
+    &amp;lt;button&amp;gt;10&amp;lt;/button&amp;gt;
+  &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;实现的JS代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 监听父元素 div#container
+container.addEventListener(&#39;click&#39;,(e)=&amp;gt;{
+    const t = e.target
+    if(t.matches(&#39;button&#39;)){
+    console.log(&#39;点击了button&#39;)
+    }
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;思路：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先监听父元素&lt;/li&gt;
+&lt;li&gt;然后根据浏览器传进去的事件信息，拿到当前点击元素e.target&lt;/li&gt;
+&lt;li&gt;再判断当前点击元素是不是button，如果是，就输出log语句&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;综上所述利用事件委托可以有效减少内存消耗，提高性能。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>jQuery</title>
       <link>http://localhost:1313/post/jquery/</link>
       <pubDate>Thu, 23 Jan 2020 16:01:23 +0800</pubDate>
