@@ -537,6 +537,65 @@ git push xxxx
     </item>
     
     <item>
+      <title>jQuery</title>
+      <link>http://localhost:1313/post/jquery/</link>
+      <pubDate>Thu, 23 Jan 2020 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jquery/</guid>
+      
+        <description>&lt;h1 id=&#34;jquery&#34;&gt;jQuery&lt;/h1&gt;
+&lt;h2 id=&#34;了解jquery&#34;&gt;了解jQuery&lt;/h2&gt;
+&lt;p&gt;在三大框架(Vue, React, Angular)日益盛行的今天，jQuery的热度似乎已经逐渐消减。jQuery作为一个简单，经典的库，我们可以通过jQuery学习很多封装技巧，根据&lt;a href=&#34;https://trends.builtwith.com/javascript/jQuery&#34;&gt;Built width&lt;/a&gt;的统计，jQuery的使用数量仍在逐年上涨。jQuery作为一个封装良好的DOM库，jQuery能够如此流行还要归功于其良好的设计模式，使用起来相当便利，作为前端新人，通过学习jQuery，了解一些jQuery的设计思想，无论是对于今后学习其他框架，还是打牢js基础，都是很有必要的。&lt;/p&gt;
+&lt;h2 id=&#34;jquery的使用方法&#34;&gt;jQuery的使用方法&lt;/h2&gt;
+&lt;h3 id=&#34;使用jquery选择dom元素&#34;&gt;使用jQuery选择DOM元素&lt;/h3&gt;
+&lt;p&gt;作为一个封装良好的DOM库，使用jQuery往往从选择一个DOM元素开始，然后对其进行某种操作。&lt;/p&gt;
+&lt;p&gt;我们可以通过使用&lt;code&gt;jQuery()&lt;/code&gt;或者更加简洁的&lt;code&gt;$()&lt;/code&gt;来获取一个DOM元素。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;div&#39;) // 获取页面所有div元素
+
+$(&#39;.red&#39;) // 获取所有class包含red的元素
+
+$(&#39;#red&#39;) // 获取id为red的元素
+
+$(&#39;input[name=firstname]&#39;) // 获取name属性为firstname的input元素
+
+$(&#39;a:first&#39;) // 获取页面中第一个a元素
+
+$(&#39;li:odd&#39;) // 获取奇数li
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他选择方式，参见&lt;a href=&#34;https://www.jquery123.com/category/selectors/&#34;&gt;选择器&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;操作dom元素&#34;&gt;操作DOM元素&lt;/h3&gt;
+&lt;p&gt;jQuery的设计思想在于选择DOM元素，并对其进行操作，但由于DOM API的复杂性，使用jQuery选择DOM元素后并不会返回DOM对象，而是一个jQuery对象，通过操作jQuery对象，即可操作使用jQuery选中的DOM对象，这极大的方便了DOM元素的可操作性，也由于jQuery出色的封装，使得常用属性操作也非常方便。&lt;/p&gt;
+&lt;h4 id=&#34;链式操作&#34;&gt;链式操作&lt;/h4&gt;
+&lt;p&gt;正因为使用jQuery选择DOM后返回一个jQuery对象，所以我们可以使用链式操作，类似如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;.red&#39;) // 找到指定元素集合
+  .find(&#39;li&#39;) // 找到集合中特定部分
+  .eq(2) // 选择指定元素
+  .text(&#39;Hello&#39;) // 对其进行操作
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;gettersetter&#34;&gt;getter/setter&lt;/h4&gt;
+&lt;p&gt;在jQuery中，部分API会根据参数不同来改变API的行为，其中，比较方便的一项就是如果指定参数，就将API作为一个setter使用，将属性设置为指定的值；如果不传入参数，那就作为getter使用，返回元素指定属性的值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;h1&#39;).text() // 返回h1的文本内容
+
+$(&#39;h1&#39;).text(&#39;hello&#39;) // 设置h1的文本内容为hello
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;创建元素&#34;&gt;创建元素&lt;/h4&gt;
+&lt;p&gt;使用jQuery，我们可以方便的创建元素&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;&amp;lt;div&amp;gt;Hello world&amp;lt;/div&amp;gt;&#39;) // 创建一个div元素
+  .append($(&#39;.red&#39;)) // 插入指定元素集之后
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于使用jQuery创建DOM元素，更多信息可以查看&lt;a href=&#34;https://www.jquery123.com/jQuery/&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其他DOM操作，可以查看&lt;a href=&#34;https://www.jquery123.com/category/manipulation/&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;移动元素&#34;&gt;移动元素&lt;/h4&gt;
+&lt;p&gt;通过jQuery提供的API的组合，我们可以移动一个DOM元素到指定的位置。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;.red&#39;).insertAfter($(&#39;.green&#39;)) // 将class包含red的元素插入class包含green的元素之后
+
+$(&#39;.green&#39;).after($(&#39;.red&#39;)) // 将class包含red的元素放在class包含green的后面
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;类似还有&lt;code&gt;.insertBefore()&lt;/code&gt;，&lt;code&gt;.before()&lt;/code&gt;，&lt;code&gt;.appendTo()&lt;/code&gt;，&lt;code&gt;.append()&lt;/code&gt;，&lt;code&gt;.prependTo()&lt;/code&gt;和&lt;code&gt;.prepend()&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;修改dom属性&#34;&gt;修改DOM属性&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;div&#39;).addClass(&#39;.red&#39;) // 给所有div添加样式类red
+
+$(&#39;div&#39;).css({width: &#39;200px&#39;}) // 将所有div宽度设置为200px
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>JS函数执行的时机</title>
       <link>http://localhost:1313/post/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E6%97%B6%E6%9C%BA/</link>
       <pubDate>Fri, 10 Jan 2020 16:01:23 +0800</pubDate>

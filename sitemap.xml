@@ -121,6 +121,13 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/post/jquery/</loc>
+    <lastmod>2020-01-23T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E6%97%B6%E6%9C%BA/</loc>
     <lastmod>2020-01-10T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
