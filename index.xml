@@ -1100,8 +1100,8 @@ for (i = 0; i &amp;lt; 6; i++) {
       
       <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
       
-        <description>&lt;p&gt;&lt;strong&gt;# 浅析MVC&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;## MVC 三个对象分别做什么，给出伪代码示例&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;h1 id=&#34;浅析mvc&#34;&gt;浅析MVC&lt;/h1&gt;
+&lt;h2 id=&#34;mvc-三个对象分别做什么给出伪代码示例&#34;&gt;MVC 三个对象分别做什么，给出伪代码示例&lt;/h2&gt;
 &lt;p&gt;MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种技术，塔通过关注点分离鼓励改进应用程序组织&lt;/p&gt;
 &lt;p&gt;其中：&lt;/p&gt;
 &lt;p&gt;M-Model 用于封装与应用的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型，与数据有关的就放在M里面&lt;/p&gt;
