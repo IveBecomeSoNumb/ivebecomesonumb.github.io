@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Ay&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Dec 2020 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 16:01:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浅析MVC</title>
+      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Wed, 14 Jul 2021 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description>浅析MVC MVC 三个对象分别做什么，给出伪代码示例 MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种</description>
+    </item>
+    
     <item>
       <title>JavaScript的诞生</title>
       <link>http://localhost:1313/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
@@ -122,15 +131,6 @@
       
       <guid>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</guid>
       <description>开博记录贴！ 11-02号开通blog</description>
-    </item>
-    
-    <item>
-      <title>浅析MVC</title>
-      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
-      <description>浅析MVC MVC 三个对象分别做什么，给出伪代码示例 MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种</description>
     </item>
     
   </channel>
