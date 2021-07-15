@@ -44,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</loc>
-    <lastmod>2020-12-27T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/</loc>
     <lastmod>2020-12-27T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -158,6 +151,12 @@
   <url>
     <loc>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</loc>
     <lastmod>2018-01-02T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

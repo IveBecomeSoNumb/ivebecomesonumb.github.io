@@ -93,119 +93,6 @@
     </item>
     
     <item>
-      <title>JavaScript的诞生</title>
-      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
-      <pubDate>Sun, 27 Dec 2020 16:01:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
-      
-        <description>&lt;p&gt;&lt;strong&gt;# 浅析MVC&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;## MVC 三个对象分别做什么，给出伪代码示例&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种技术，塔通过关注点分离鼓励改进应用程序组织&lt;/p&gt;
-&lt;p&gt;其中：&lt;/p&gt;
-&lt;p&gt;M-Model 用于封装与应用的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型，与数据有关的就放在M里面&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;let Model={
-    data:{},
-    create:{},
-    delete:{},
-    update(data){
-        Object.assign(m.data,data)//用新数据替换旧数据
-        eventBus.trigger(&#39;m:update&#39;)//eventBus触发&#39;m:update&#39;信息，通知View刷新界面
-    },
-    get:{}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;V-View 实现了M里数据的展示，展现了Model的当前状态，当模型里的数据发生变化时，视图相应地会刷新自己，与视图相关地放在V里面&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;let View={
-    el:el，
-    html：&#39;&#39;//html
-    init(){
-        v.el://elments
-    }，
-    render(){
-        
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C-Controller 定义用户界面对用户输入地响应，起到承上启下的作用，用于控制应用的流程&lt;/p&gt;
-&lt;p&gt;，除了M和V的内容放在C里面&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;let Controller={
-    init(){
-        v.init()
-        v.render()
-        c.autoBindEvents()
-        eventBus.on(&#39;m:update&#39;,()=&amp;gt;{v.render()}
-    }，
-    events:{//hashtable},
-    method(){
-        data=data
-        m.update(data)
-    },
-    autoBindEvents(){}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;eventbus有哪些api作用是&#34;&gt;EventBus有哪些API，作用是&lt;/h2&gt;
-&lt;p&gt;EventBus的作用是用来实现对象间的通信&lt;/p&gt;
-&lt;p&gt;EventBus基本的3个API是 on, trigger(emit),off, 作用分别是监听事件，触发事件，取消监听&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const eventBus = $(window) 
-const m = {
-  data: {
-    ...
-  },
-  update(data) {
-    eventBus.trigger(&#39;m:updated&#39;)
-  }
-}
-
-const v = {
-  render(data) {
-    ...
-  }
-}  
-  
-const c = {
-  eventBus.on(&#39;m:updated&#39;, () =&amp;gt; {
-    v.render(m.data.n)
-  })
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;表驱动编程是做什么的&#34;&gt;表驱动编程是做什么的&lt;/h2&gt;
-&lt;p&gt;表驱动编程是通过哈希表来优化代码，可以将大量重复的代码进行剥离，从而达到模块化的处理&lt;/p&gt;
-&lt;p&gt;Before:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$(&#39;#el1&#39;).on(&#39;事件A&#39;, fn1)
-$(&#39;#el2&#39;).on(&#39;事件B&#39;, fn2)
-$(&#39;#el3&#39;).on(&#39;事件C&#39;, fn3)
-$(&#39;#el4&#39;).on(&#39;事件D&#39;, fn4)
-$(&#39;#el5&#39;).on(&#39;事件E&#39;, fn5)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const events = {
-  &amp;quot;#el1 事件A&amp;quot;: &amp;quot;fn1&amp;quot;,
-  &amp;quot;#el2 事件B&amp;quot;: &amp;quot;fn2&amp;quot;,
-  &amp;quot;#el3 事件C&amp;quot;: &amp;quot;fn3&amp;quot;,
-  &amp;quot;#el4 事件D&amp;quot;: &amp;quot;fn4&amp;quot;,
-  &amp;quot;#el5 事件E&amp;quot;: &amp;quot;fn5&amp;quot;
-}
-
-const eventFunctions = {
-  fn1: function() {},
-  fn2: function() {},
-  fn3: function() {},
-  fn4: function() {},
-  fn5: function() {}
-}
-
-function autoBindEvents() {
-  for(let key in events) {
-    const spaceIndex = key.indexOf(&#39; &#39;)
-    const el = key.splice(0, spaceIndex) 
-    const event = key.splice(spaceIndex+1)
-    const fn = eventFunctions[events[key]]
-    $(el).on(event, fn)
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;如何理解模块化的&#34;&gt;如何理解模块化的&lt;/h2&gt;
-&lt;p&gt;我理解里的模块化是一种封装的思想，将大量的代码封装成几个模块，不同模块之间负责不同的工作，各个模块直接按协调完成一个项目，对于日后的优化和重构都非常重要&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>CSS知识总结</title>
       <link>http://localhost:1313/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sun, 20 Dec 2020 16:01:23 +0800</pubDate>
@@ -1202,6 +1089,119 @@ for (i = 0; i &amp;lt; 6; i++) {
       <guid>http://localhost:1313/post/%E5%BC%80%E5%8D%9A%E5%95%A6/</guid>
       
         <description>&lt;p&gt;开博记录贴！ 11-02号开通blog&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>浅析MVC</title>
+      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;# 浅析MVC&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;## MVC 三个对象分别做什么，给出伪代码示例&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种技术，塔通过关注点分离鼓励改进应用程序组织&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;p&gt;M-Model 用于封装与应用的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型，与数据有关的就放在M里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let Model={
+    data:{},
+    create:{},
+    delete:{},
+    update(data){
+        Object.assign(m.data,data)//用新数据替换旧数据
+        eventBus.trigger(&#39;m:update&#39;)//eventBus触发&#39;m:update&#39;信息，通知View刷新界面
+    },
+    get:{}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;V-View 实现了M里数据的展示，展现了Model的当前状态，当模型里的数据发生变化时，视图相应地会刷新自己，与视图相关地放在V里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let View={
+    el:el，
+    html：&#39;&#39;//html
+    init(){
+        v.el://elments
+    }，
+    render(){
+        
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C-Controller 定义用户界面对用户输入地响应，起到承上启下的作用，用于控制应用的流程&lt;/p&gt;
+&lt;p&gt;，除了M和V的内容放在C里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let Controller={
+    init(){
+        v.init()
+        v.render()
+        c.autoBindEvents()
+        eventBus.on(&#39;m:update&#39;,()=&amp;gt;{v.render()}
+    }，
+    events:{//hashtable},
+    method(){
+        data=data
+        m.update(data)
+    },
+    autoBindEvents(){}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;eventbus有哪些api作用是&#34;&gt;EventBus有哪些API，作用是&lt;/h2&gt;
+&lt;p&gt;EventBus的作用是用来实现对象间的通信&lt;/p&gt;
+&lt;p&gt;EventBus基本的3个API是 on, trigger(emit),off, 作用分别是监听事件，触发事件，取消监听&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const eventBus = $(window) 
+const m = {
+  data: {
+    ...
+  },
+  update(data) {
+    eventBus.trigger(&#39;m:updated&#39;)
+  }
+}
+
+const v = {
+  render(data) {
+    ...
+  }
+}  
+  
+const c = {
+  eventBus.on(&#39;m:updated&#39;, () =&amp;gt; {
+    v.render(m.data.n)
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;表驱动编程是做什么的&#34;&gt;表驱动编程是做什么的&lt;/h2&gt;
+&lt;p&gt;表驱动编程是通过哈希表来优化代码，可以将大量重复的代码进行剥离，从而达到模块化的处理&lt;/p&gt;
+&lt;p&gt;Before:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;#el1&#39;).on(&#39;事件A&#39;, fn1)
+$(&#39;#el2&#39;).on(&#39;事件B&#39;, fn2)
+$(&#39;#el3&#39;).on(&#39;事件C&#39;, fn3)
+$(&#39;#el4&#39;).on(&#39;事件D&#39;, fn4)
+$(&#39;#el5&#39;).on(&#39;事件E&#39;, fn5)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const events = {
+  &amp;quot;#el1 事件A&amp;quot;: &amp;quot;fn1&amp;quot;,
+  &amp;quot;#el2 事件B&amp;quot;: &amp;quot;fn2&amp;quot;,
+  &amp;quot;#el3 事件C&amp;quot;: &amp;quot;fn3&amp;quot;,
+  &amp;quot;#el4 事件D&amp;quot;: &amp;quot;fn4&amp;quot;,
+  &amp;quot;#el5 事件E&amp;quot;: &amp;quot;fn5&amp;quot;
+}
+
+const eventFunctions = {
+  fn1: function() {},
+  fn2: function() {},
+  fn3: function() {},
+  fn4: function() {},
+  fn5: function() {}
+}
+
+function autoBindEvents() {
+  for(let key in events) {
+    const spaceIndex = key.indexOf(&#39; &#39;)
+    const el = key.splice(0, spaceIndex) 
+    const event = key.splice(spaceIndex+1)
+    const fn = eventFunctions[events[key]]
+    $(el).on(event, fn)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;如何理解模块化的&#34;&gt;如何理解模块化的&lt;/h2&gt;
+&lt;p&gt;我理解里的模块化是一种封装的思想，将大量的代码封装成几个模块，不同模块之间负责不同的工作，各个模块直接按协调完成一个项目，对于日后的优化和重构都非常重要&lt;/p&gt;
 </description>
       
     </item>
