@@ -93,59 +93,114 @@
     </item>
     
     <item>
-      <title>浅析URL</title>
-      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</link>
-      <pubDate>Sat, 26 Dec 2020 16:01:23 +0800</pubDate>
+      <title>JavaScript的诞生</title>
+      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Sun, 27 Dec 2020 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</guid>
+      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
       
-        <description>&lt;h1 id=&#34;浅析url&#34;&gt;浅析URL&lt;/h1&gt;
-&lt;h3 id=&#34;url-组成&#34;&gt;URL 组成&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;URL Uniform Resource Locator 统一资源定位符&lt;/li&gt;
-&lt;li&gt;协议+域名/IP+端口号+路径+查询字符串+锚点&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/12/27/ITx9ehA8kyaCYH6.png&#34; alt=&#34;URL&#34;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;协议（Protocol）是用于传输超媒体文档（例如HTML）的应用层协议；&lt;/li&gt;
-&lt;li&gt;域名（Domain Names）是互联网基础架构的关键部分，它们为互联网上任何可用的网页服务器，提供了方便人类理解的地址，用来表示IP对应的字符串；&lt;/li&gt;
-&lt;li&gt;IP(Internet Protocol):定位设备的字符串&lt;/li&gt;
-&lt;li&gt;路径（Path）：字符串，用于请求不同的页面&lt;/li&gt;
-&lt;li&gt;查询字符串：用于查看什么内容，可以同一页面查看不同内容（例微博）&lt;/li&gt;
-&lt;li&gt;锚点：用于浏览器定位文档内部&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;dnsnslookup命令&#34;&gt;DNS,nslookup命令&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;DNS（Domain Name System）是一个层次化、分散化的Internet连接资源命名系统，作用是姜易于记忆的域名翻译成数字化的IP地址&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;nslookup使用：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/12/27/7VQ29jBUPAnKJgk.png&#34; alt=&#34;DNS&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;ip作用ping命令&#34;&gt;IP作用,ping命令&lt;/h3&gt;
-&lt;p&gt;IP：定位一个设备的字符串，域名就是对IP的别称，一个域名可以对应多个不同IP，这个叫做均衡负载，防止一个机器因为太多的访问而导致崩溃。一个IP对应不同的域名（公用服务器，或者不同网页，所以会出出现不同域名情况），这个叫做共享主机。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ping使用：&lt;img src=&#34;https://i.loli.net/2020/12/27/ITvOfCiuKcoPnjM.png&#34; alt=&#34;ping&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;域名&#34;&gt;域名&lt;/h3&gt;
-&lt;p&gt;域名（Domain name）是互联网基础架构的关键部分，它们为互联网上任何可用的网页服务器提供了方便人类理解的地址&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;域名层级&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;顶级域名：是域名中最高的一级，每个域名都以顶级域名结尾。顶级域名分为两类：国家及地区双字代码顶级域（国家和地区顶级域）和通用顶级域。 前者基于 ISO-3166 规定的国家/地区双字缩写代码；后者代表了一组名称和多个组织，包括 .gov（政府），.edu（教育机构），.com（商业，现在成为全球注册量最大、最通用的域名），.mil（军事），.org（非营利组织），.net（网络，当时被定位为网络基础服务提供商）和.int（国际组织）等&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;子域名（二级域名）:子域名将顶级域名进一步细分。域名层次结构中，顶级域名下面是二级域名，它位于顶级域名的左侧;二级域名下面是三级域名，它位于二级域名的左侧。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;For example:xiedaimala.com 是二级域名，俗称一级域名； &lt;a href=&#34;http://www.xiedaimala.com&#34;&gt;www.xiedaimala.com&lt;/a&gt; 是三级域名，俗称二级。 上述二者属于父子关系。&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;# 浅析MVC&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;## MVC 三个对象分别做什么，给出伪代码示例&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是一种技术，塔通过关注点分离鼓励改进应用程序组织&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;p&gt;M-Model 用于封装与应用的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型，与数据有关的就放在M里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let Model={
+    data:{},
+    create:{},
+    delete:{},
+    update(data){
+        Object.assign(m.data,data)//用新数据替换旧数据
+        eventBus.trigger(&#39;m:update&#39;)//eventBus触发&#39;m:update&#39;信息，通知View刷新界面
+    },
+    get:{}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;V-View 实现了M里数据的展示，展现了Model的当前状态，当模型里的数据发生变化时，视图相应地会刷新自己，与视图相关地放在V里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let View={
+    el:el，
+    html：&#39;&#39;//html
+    init(){
+        v.el://elments
+    }，
+    render(){
+        
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C-Controller 定义用户界面对用户输入地响应，起到承上启下的作用，用于控制应用的流程&lt;/p&gt;
+&lt;p&gt;，除了M和V的内容放在C里面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let Controller={
+    init(){
+        v.init()
+        v.render()
+        c.autoBindEvents()
+        eventBus.on(&#39;m:update&#39;,()=&amp;gt;{v.render()}
+    }，
+    events:{//hashtable},
+    method(){
+        data=data
+        m.update(data)
+    },
+    autoBindEvents(){}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;eventbus有哪些api作用是&#34;&gt;EventBus有哪些API，作用是&lt;/h2&gt;
+&lt;p&gt;EventBus的作用是用来实现对象间的通信&lt;/p&gt;
+&lt;p&gt;EventBus基本的3个API是 on, trigger(emit),off, 作用分别是监听事件，触发事件，取消监听&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const eventBus = $(window) 
+const m = {
+  data: {
+    ...
+  },
+  update(data) {
+    eventBus.trigger(&#39;m:updated&#39;)
+  }
+}
+
+const v = {
+  render(data) {
+    ...
+  }
+}  
+  
+const c = {
+  eventBus.on(&#39;m:updated&#39;, () =&amp;gt; {
+    v.render(m.data.n)
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;表驱动编程是做什么的&#34;&gt;表驱动编程是做什么的&lt;/h2&gt;
+&lt;p&gt;表驱动编程是通过哈希表来优化代码，可以将大量重复的代码进行剥离，从而达到模块化的处理&lt;/p&gt;
+&lt;p&gt;Before:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;#el1&#39;).on(&#39;事件A&#39;, fn1)
+$(&#39;#el2&#39;).on(&#39;事件B&#39;, fn2)
+$(&#39;#el3&#39;).on(&#39;事件C&#39;, fn3)
+$(&#39;#el4&#39;).on(&#39;事件D&#39;, fn4)
+$(&#39;#el5&#39;).on(&#39;事件E&#39;, fn5)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const events = {
+  &amp;quot;#el1 事件A&amp;quot;: &amp;quot;fn1&amp;quot;,
+  &amp;quot;#el2 事件B&amp;quot;: &amp;quot;fn2&amp;quot;,
+  &amp;quot;#el3 事件C&amp;quot;: &amp;quot;fn3&amp;quot;,
+  &amp;quot;#el4 事件D&amp;quot;: &amp;quot;fn4&amp;quot;,
+  &amp;quot;#el5 事件E&amp;quot;: &amp;quot;fn5&amp;quot;
+}
+
+const eventFunctions = {
+  fn1: function() {},
+  fn2: function() {},
+  fn3: function() {},
+  fn4: function() {},
+  fn5: function() {}
+}
+
+function autoBindEvents() {
+  for(let key in events) {
+    const spaceIndex = key.indexOf(&#39; &#39;)
+    const el = key.splice(0, spaceIndex) 
+    const event = key.splice(spaceIndex+1)
+    const fn = eventFunctions[events[key]]
+    $(el).on(event, fn)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;如何理解模块化的&#34;&gt;如何理解模块化的&lt;/h2&gt;
+&lt;p&gt;我理解里的模块化是一种封装的思想，将大量的代码封装成几个模块，不同模块之间负责不同的工作，各个模块直接按协调完成一个项目，对于日后的优化和重构都非常重要&lt;/p&gt;
 </description>
       
     </item>

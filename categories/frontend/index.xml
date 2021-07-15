@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>浅析URL</title>
-      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</link>
-      <pubDate>Sat, 26 Dec 2020 16:01:23 +0800</pubDate>
+      <title>JavaScript的诞生</title>
+      <link>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Sun, 27 Dec 2020 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90url/</guid>
-      <description>浅析URL URL 组成 URL Uniform Resource Locator 统一资源定位符 协议+域名/IP+端口号+路径+查询字符串+锚点 协议（Protocol）是用于传输超媒体文档（例如HT</description>
+      <guid>http://localhost:1313/post/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description># 浅析MVC ## MVC 三个对象分别做什么，给出伪代码示例 MVC(Model-View-Controller)是一种架构模式，是一种思想理念，并不是</description>
     </item>
     
     <item>
